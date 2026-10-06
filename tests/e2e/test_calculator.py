@@ -7,7 +7,7 @@ def open_calculator(page, base_url):
     assert base_url, "Pass --base-url for the running application"
     page.goto(base_url)
     expect(page.get_by_role("heading", name="IS373 Content Management System", level=2, exact=True)).to_be_visible()
-    expect(page).to_have_title("IS373 Content Management System")
+    expect(page).to_have_title("IS373 Calculator - apink634")
 
 
 def submit(page, a="6", b="7", operation="multiply"):
