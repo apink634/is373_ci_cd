@@ -10,10 +10,10 @@ Recorded on 2026-09-17 using Docker Desktop on an ARM64 Mac and GitHub's native 
 | Local integration tests | 16 passed; strict inputs, API responses, non-finite values, health metadata |
 | Local container E2E | 7 Chromium tests passed in 1.55 seconds |
 | Live production E2E | 7 Chromium tests passed in 1.55 seconds |
-| [First verification](https://github.com/kaw393939/is373_ci_cd/actions/runs/35257442677) | 58-second job, initial uncached verification; no publication on PR |
-| [First publication, attempt 1](https://github.com/kaw393939/is373_ci_cd/actions/runs/35257605068/attempts/1) | 90-second job; existing Docker Hub credential worked |
-| [Cached verification](https://github.com/kaw393939/is373_ci_cd/actions/runs/35258059305) | 57-second job |
-| [Second publication](https://github.com/kaw393939/is373_ci_cd/actions/runs/35260253678) | 56-second job; build 7 seconds, container E2E step 4 seconds, publication 10 seconds |
+| [First verification](https://github.com/apink634/is373_ci_cd/actions/runs/35257442677) | 58-second job, initial uncached verification; no publication on PR |
+| [First publication, attempt 1](https://github.com/apink634/is373_ci_cd/actions/runs/35257605068/attempts/1) | 90-second job; existing Docker Hub credential worked |
+| [Cached verification](https://github.com/apink634/is373_ci_cd/actions/runs/35258059305) | 57-second job |
+| [Second publication](https://github.com/apink634/is373_ci_cd/actions/runs/35260253678) | 56-second job; build 7 seconds, container E2E step 4 seconds, publication 10 seconds |
 
 Job durations exclude queue time. Browser suite execution times exclude image build/browser installation. Local test tooling emits two upstream TestClient deprecation warnings; tests still pass.
 
@@ -41,10 +41,10 @@ The second publication step finished at **18:41:25 UTC**. The new production com
 
 | Demonstration | Run | Result |
 | --- | --- | --- |
-| Unit fault, PR #15 | [35258148865](https://github.com/kaw393939/is373_ci_cd/actions/runs/35258148865) | Unit step failed; later stages/publication skipped; 11-second job |
-| API contract fault, PR #16 | [35258152948](https://github.com/kaw393939/is373_ci_cd/actions/runs/35258152948) | Unit passed, integration failed, publication skipped; 16-second job |
-| Browser-handler fault, PR #17 | [35258154766](https://github.com/kaw393939/is373_ci_cd/actions/runs/35258154766) | Lower tests/build passed, E2E failed, publication skipped; 95-second job |
-| Stale main rerun | [First publication, attempt 2](https://github.com/kaw393939/is373_ci_cd/actions/runs/35257605068/attempts/2) | Tests passed; promotion rejected with `Refusing to promote a stale main commit` |
+| Unit fault, PR #15 | [35258148865](https://github.com/apink634/is373_ci_cd/actions/runs/35258148865) | Unit step failed; later stages/publication skipped; 11-second job |
+| API contract fault, PR #16 | [35258152948](https://github.com/apink634/is373_ci_cd/actions/runs/35258152948) | Unit passed, integration failed, publication skipped; 16-second job |
+| Browser-handler fault, PR #17 | [35258154766](https://github.com/apink634/is373_ci_cd/actions/runs/35258154766) | Lower tests/build passed, E2E failed, publication skipped; 95-second job |
+| Stale main rerun | [First publication, attempt 2](https://github.com/apink634/is373_ci_cd/actions/runs/35257605068/attempts/2) | Tests passed; promotion rejected with `Refusing to promote a stale main commit` |
 
 The E2E artifact was downloaded and inspected: seven failure screenshots, seven traces, and application container logs. The screenshot and failed trace assertion show that the disconnected submit handler never produced the expected result. The intentionally broken PRs were closed unmerged and remain available for review.
 
@@ -62,6 +62,6 @@ Production stayed on the first release throughout the three test-gate demonstrat
 
 ## Final local setup
 
-The initial rehearsal used development port `8082`. The owner then authorized stopping the conflicting Apache container `confident_mendel`; it is stopped and retained intact. Final QA verified development on `8080`, production on `8090`, and WUD on `8091`. The port change preserved production. See [#19](https://github.com/kaw393939/is373_ci_cd/issues/19) and the [final QA report](qa.md).
+The initial rehearsal used development port `8082`. The owner then authorized stopping the conflicting Apache container `confident_mendel`; it is stopped and retained intact. Final QA verified development on `8080`, production on `8090`, and WUD on `8091`. The port change preserved production. See [#19](https://github.com/apink634/is373_ci_cd/issues/19) and the [final QA report](qa.md).
 
 Later documentation commits can produce newer releases. Treat the identities above as the preserved rehearsal baseline; use `make status` for the live version.

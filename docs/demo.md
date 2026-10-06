@@ -11,15 +11,15 @@ make up
 make status
 ```
 
-If port `8080` is occupied, resolve that conflict or configure `DEV_PORT` in an ignored `.env` file. Final QA verified the default `8080` after the owner authorized stopping the old Apache container ([#19](https://github.com/kaw393939/is373_ci_cd/issues/19)).
+If port `8080` is occupied, resolve that conflict or configure `DEV_PORT` in an ignored `.env` file. Final QA verified the default `8080` after the owner authorized stopping the old Apache container ([#19](https://github.com/apink634/is373_ci_cd/issues/19)).
 
-Open development, production at `http://localhost:8090`, [Actions](https://github.com/kaw393939/is373_ci_cd/actions), and optionally WUD at `http://localhost:8091`. Log into WUD as `admin` using the password in local `.state/wud.env`.
+Open development, production at `http://localhost:8090`, [Actions](https://github.com/apink634/is373_ci_cd/actions), and optionally WUD at `http://localhost:8091`. Log into WUD as `admin` using the password in local `.state/wud.env`.
 
 Save the current production commit and digest before changing anything:
 
 ```sh
 curl -fsS http://localhost:8090/health
-docker image inspect kaw393939/is373_ci_cd:prod --format '{{json .RepoDigests}}'
+docker image inspect apink634/is373_ci_cd:prod --format '{{json .RepoDigests}}'
 ```
 
 ## 1. Explain the three test levels
@@ -63,9 +63,9 @@ The rehearsed examples remain available as closed, unmerged PRs:
 
 | Fault | Expected failing step | Recorded PR |
 | --- | --- | --- |
-| Python multiplication changed to addition | Unit tests | [#15](https://github.com/kaw393939/is373_ci_cd/pull/15) |
-| API returns `answer` instead of `result` | Integration tests | [#16](https://github.com/kaw393939/is373_ci_cd/pull/16) |
-| JavaScript submit handler disconnected | E2E tests | [#17](https://github.com/kaw393939/is373_ci_cd/pull/17) |
+| Python multiplication changed to addition | Unit tests | [#15](https://github.com/apink634/is373_ci_cd/pull/15) |
+| API returns `answer` instead of `result` | Integration tests | [#16](https://github.com/apink634/is373_ci_cd/pull/16) |
+| JavaScript submit handler disconnected | E2E tests | [#17](https://github.com/apink634/is373_ci_cd/pull/17) |
 
 All three skipped publication and left production unchanged. To demonstrate again, use a separate branch/PR with one fault at a time. Do not merge a deliberately broken PR. Use a separate worktree if you want to keep the live development source stable.
 

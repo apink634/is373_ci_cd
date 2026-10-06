@@ -39,13 +39,13 @@ jobs:
           PY
       - name: Pull the deployed release for the selected platform
         env:
-          IMAGE: kaw393939/is373_ci_cd:sha-${{ steps.release.outputs.commit }}-${{ matrix.arch }}
+          IMAGE: apink634/is373_ci_cd:sha-${{ steps.release.outputs.commit }}-${{ matrix.arch }}
         run: docker pull --platform linux/${{ matrix.arch }} "$IMAGE"
       - name: Install checksum-pinned image scanner
         run: sh scripts/install-trivy.sh
       - name: Scan deployed release (report-only policy)
         env:
-          IMAGE: kaw393939/is373_ci_cd:sha-${{ steps.release.outputs.commit }}-${{ matrix.arch }}
+          IMAGE: apink634/is373_ci_cd:sha-${{ steps.release.outputs.commit }}-${{ matrix.arch }}
         run: python3 scripts/scan-image.py "$IMAGE" "artifacts/security-${{ matrix.arch }}"
       - name: Retain scan reports and resolved image identity
         if: always()

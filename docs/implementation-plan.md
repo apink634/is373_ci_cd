@@ -2,20 +2,20 @@
 
 Status: the application and delivery implementation has merged through PRs #9, #10, #11, #12, and #14. Automatic deployment, rollback, and three failure gates have been rehearsed. The final port decision is resolved; see [final QA](qa.md) and [evidence](evidence.md) for verification.
 
-Milestone: [v1 — FastAPI CI/CD demonstration](https://github.com/kaw393939/is373_ci_cd/milestone/1).
+Milestone: [v1 — FastAPI CI/CD demonstration](https://github.com/apink634/is373_ci_cd/milestone/1).
 
 ## Ordered work
 
 | Issue | Deliverable | Dependencies | Completion evidence |
 | --- | --- | --- | --- |
-| [#1 — Documentation and GitHub workflow](https://github.com/kaw393939/is373_ci_cd/issues/1) | Specifications, AI guidance, templates, and issue backlog | None | Reviewed links/YAML and published atomic commits |
-| [#2 — Environment decisions](https://github.com/kaw393939/is373_ci_cd/issues/2) | Host, architecture, registry access, version choices | None; push permission checked with #6 | Recorded decisions; no exposed credentials |
-| [#3 — FastAPI and lower-level tests](https://github.com/kaw393939/is373_ci_cd/issues/3) | Arithmetic, API contract, health, unit and integration tests | None | Passing pytest output and timings |
-| [#4 — HTML calculator and browser tests](https://github.com/kaw393939/is373_ci_cd/issues/4) | Browser/API comparison, errors, release display, Playwright | #3 | Chromium results and UI review |
-| [#5 — Containers and commands](https://github.com/kaw393939/is373_ci_cd/issues/5) | Dev/prod isolation, Docker image, Make interface | #2 environment decisions, #3, #4 | Tests against built image and Compose verification |
-| [#6 — GitHub Actions and publishing](https://github.com/kaw393939/is373_ci_cd/issues/6) | Gated release pipeline and later required checks | #5 | Passing/failing runs, registry digest, verified protections |
-| [#7 — WUD and rollback](https://github.com/kaw393939/is373_ci_cd/issues/7) | Automatic production update, rollback/resume | #2, #5, #6 | Running commit, updater evidence, unchanged dev, rollback |
-| [#8 — Demo rehearsal and verified docs](https://github.com/kaw393939/is373_ci_cd/issues/8) | Complete walkthrough and framework adaptation guide | #4, #6, #7 | Recorded end-to-end evidence and actual timings |
+| [#1 — Documentation and GitHub workflow](https://github.com/apink634/is373_ci_cd/issues/1) | Specifications, AI guidance, templates, and issue backlog | None | Reviewed links/YAML and published atomic commits |
+| [#2 — Environment decisions](https://github.com/apink634/is373_ci_cd/issues/2) | Host, architecture, registry access, version choices | None; push permission checked with #6 | Recorded decisions; no exposed credentials |
+| [#3 — FastAPI and lower-level tests](https://github.com/apink634/is373_ci_cd/issues/3) | Arithmetic, API contract, health, unit and integration tests | None | Passing pytest output and timings |
+| [#4 — HTML calculator and browser tests](https://github.com/apink634/is373_ci_cd/issues/4) | Browser/API comparison, errors, release display, Playwright | #3 | Chromium results and UI review |
+| [#5 — Containers and commands](https://github.com/apink634/is373_ci_cd/issues/5) | Dev/prod isolation, Docker image, Make interface | #2 environment decisions, #3, #4 | Tests against built image and Compose verification |
+| [#6 — GitHub Actions and publishing](https://github.com/apink634/is373_ci_cd/issues/6) | Gated release pipeline and later required checks | #5 | Passing/failing runs, registry digest, verified protections |
+| [#7 — WUD and rollback](https://github.com/apink634/is373_ci_cd/issues/7) | Automatic production update, rollback/resume | #2, #5, #6 | Running commit, updater evidence, unchanged dev, rollback |
+| [#8 — Demo rehearsal and verified docs](https://github.com/apink634/is373_ci_cd/issues/8) | Complete walkthrough and framework adaptation guide | #4, #6, #7 | Recorded end-to-end evidence and actual timings |
 
 Issue #2 is not a blanket blocker: backend work can proceed while host decisions are pending, and push permission is verified with the first publication rather than creating a circular dependency. Browser tests can initially run against a temporary application process in #4; #5 must run them against the built image before CI publication is implemented.
 
@@ -50,6 +50,6 @@ Public hosting/TLS, authentication, databases, a frontend framework, multiple br
 
 ## Demonstration tracking
 
-[#13](https://github.com/kaw393939/is373_ci_cd/issues/13) records three intentionally broken PRs: [unit #15](https://github.com/kaw393939/is373_ci_cd/pull/15), [integration #16](https://github.com/kaw393939/is373_ci_cd/pull/16), and [E2E #17](https://github.com/kaw393939/is373_ci_cd/pull/17). All were closed without merging; their history is retained for teaching.
+[#13](https://github.com/apink634/is373_ci_cd/issues/13) records three intentionally broken PRs: [unit #15](https://github.com/apink634/is373_ci_cd/pull/15), [integration #16](https://github.com/apink634/is373_ci_cd/pull/16), and [E2E #17](https://github.com/apink634/is373_ci_cd/pull/17). All were closed without merging; their history is retained for teaching.
 
-[#19](https://github.com/kaw393939/is373_ci_cd/issues/19) records the resolved port conflict: the owner authorized stopping the old Apache container, and development now runs on 8080. [#22](https://github.com/kaw393939/is373_ci_cd/issues/22) tracks the final system review and QA.
+[#19](https://github.com/apink634/is373_ci_cd/issues/19) records the resolved port conflict: the owner authorized stopping the old Apache container, and development now runs on 8080. [#22](https://github.com/apink634/is373_ci_cd/issues/22) tracks the final system review and QA.

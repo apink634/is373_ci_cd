@@ -17,7 +17,7 @@ services:
     restart: unless-stopped
 
   prod:
-    image: ${PROD_IMAGE:-kaw393939/is373_ci_cd:prod}
+    image: ${PROD_IMAGE:-apink634/is373_ci_cd:prod}
     user: "10001:10001"
     read_only: true
     cap_drop: [ALL]

@@ -74,7 +74,7 @@ WUD requires authentication. `make up` generates a random local admin password i
 ## Verified environment decisions
 
 - Deployment uses this Mac's Docker Desktop on `linux/arm64`, with services bound to loopback.
-- The GitHub repository and `kaw393939/is373_ci_cd` Docker Hub repository are public.
+- The GitHub repository and `apink634/is373_ci_cd` Docker Hub repository are public.
 - The initial demo used `ubuntu-24.04-arm` and a single ARM64 image. The current pipeline tests native AMD64 and ARM64 artifacts and publishes a combined index; see [CI/CD](ci-cd.md).
 - Python is `3.13.15`; uv `0.12.15` bootstraps locally under ignored `.tools/`, with the full dependency graph committed in `uv.lock`.
 - Python container base: `python:3.13.15-slim-bookworm`, pinned by digest in the Dockerfile.
@@ -84,7 +84,7 @@ WUD requires authentication. `make up` generates a random local admin password i
 
 ## Local port resolution
 
-The initial rehearsal used `8082` because `confident_mendel` occupied `8080`. The owner subsequently authorized stopping it. Final QA verified development on `8080`, production on `8090`, and WUD on `8091`; the port change left production running. [#19](https://github.com/kaw393939/is373_ci_cd/issues/19) records the resolution. To restore the old Apache container later, first free `8080`, then run `docker start confident_mendel`.
+The initial rehearsal used `8082` because `confident_mendel` occupied `8080`. The owner subsequently authorized stopping it. Final QA verified development on `8080`, production on `8090`, and WUD on `8091`; the port change left production running. [#19](https://github.com/apink634/is373_ci_cd/issues/19) records the resolution. To restore the old Apache container later, first free `8080`, then run `docker start confident_mendel`.
 
 For the shortest demo use a single deployment architecture and a compatible CI runner where practical. If that is unavailable, explicitly choose emulation or multi-platform builds and record the build-time tradeoff. Browser-test the deployable architecture, or state clearly when only one architecture of a multi-platform release was tested. Never silently ship an AMD64-only image to an ARM64 host.
 

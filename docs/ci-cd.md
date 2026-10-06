@@ -23,7 +23,7 @@ PRs and manual dispatch can verify but never publish. A PR run does not receive 
 | `prod` | Moving channel pointing at the latest promoted index |
 | `@sha256:...` | Immutable registry content identity (index or platform manifest) |
 
-All references use repository `kaw393939/is373_ci_cd`. Docker selects the appropriate platform from an index. The image ID used by the runtime is the local platform image's identity; it is not necessarily the registry index digest. Publication evidence records child manifests and the index so the distinction can be taught explicitly.
+All references use repository `apink634/is373_ci_cd`. Docker selects the appropriate platform from an index. The image ID used by the runtime is the local platform image's identity; it is not necessarily the registry index digest. Publication evidence records child manifests and the index so the distinction can be taught explicitly.
 
 Tags are protected by project convention, not registry immutability. The publisher refuses a rerun if any commit tag already exists, including a partially uploaded platform release. Publish a new commit after diagnosing an interrupted release. Do not overwrite old evidence or silently rebuild for the same tag.
 

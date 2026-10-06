@@ -10,7 +10,7 @@ Issue #34 / PR #35 addresses the original SEC-01 baseline. Counts below are pack
 | Low | 91 | 60 |
 | Unknown | 4 | 2 |
 
-The new scans list no findings with a fixed version and no Python package vulnerabilities. This is a point-in-time scan result, not a guarantee that the application has no vulnerabilities. Scanner JSON and image identities are retained in [the PR workflow](https://github.com/kaw393939/is373_ci_cd/actions/runs/36903581374).
+The new scans list no findings with a fixed version and no Python package vulnerabilities. This is a point-in-time scan result, not a guarantee that the application has no vulnerabilities. Scanner JSON and image identities are retained in [the PR workflow](https://github.com/apink634/is373_ci_cd/actions/runs/36903581374).
 
 ## Changes
 

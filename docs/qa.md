@@ -1,12 +1,12 @@
 # Final system review and QA
 
-Reviewed on 2026-09-17, tracked in [#22](https://github.com/kaw393939/is373_ci_cd/issues/22). Result: no outstanding demo-blocking defects found. The port conflict in [#19](https://github.com/kaw393939/is373_ci_cd/issues/19) is resolved. Development is on **8080**, production on **8090**, and the authenticated WUD dashboard on **8091**.
+Reviewed on 2026-09-17, tracked in [#22](https://github.com/apink634/is373_ci_cd/issues/22). Result: no outstanding demo-blocking defects found. The port conflict in [#19](https://github.com/apink634/is373_ci_cd/issues/19) is resolved. Development is on **8080**, production on **8090**, and the authenticated WUD dashboard on **8091**.
 
 ## Scope and findings
 
 Reviewed the calculator and HTTP contracts against CALC-01–04, UI-01, and OPS-01/02; reviewed Docker, publication, update, recovery, and repository controls against DEL-01–06 and DEV-01/02. Inspected source, tests, locked dependencies, Docker build context, workflow, scripts, issue forms, and documentation.
 
-The review corrected stale documentation that still described the port decision as pending. The previous Apache container was stopped with explicit owner permission and retained intact. Application behavior required no further changes. The earlier E2E startup-cleanup defect was already fixed through [#20](https://github.com/kaw393939/is373_ci_cd/issues/20) and [PR #21](https://github.com/kaw393939/is373_ci_cd/pull/21).
+The review corrected stale documentation that still described the port decision as pending. The previous Apache container was stopped with explicit owner permission and retained intact. Application behavior required no further changes. The earlier E2E startup-cleanup defect was already fixed through [#20](https://github.com/apink634/is373_ci_cd/issues/20) and [PR #21](https://github.com/apink634/is373_ci_cd/pull/21).
 
 ## Fresh verification
 
@@ -27,9 +27,9 @@ The review corrected stale documentation that still described the port decision 
 
 Browser and pytest timings exclude build/setup time. The exploratory browser checks and screenshots were local QA probes, not additions to the seven-test CI suite. One probe initially used Playwright's disabled assertion on a fieldset; the diagnostic showed its child controls correctly disabled. The corrected probe asserted the actual button and input and passed. There was no application defect.
 
-The checked release before the final documentation merge was `33baa2f0c3ea5349f27ea06eaabaf1b65f81189a`, published by [run 35262446382](https://github.com/kaw393939/is373_ci_cd/actions/runs/35262446382), digest `sha256:158e3748758c165fd75a835b968a9a1fe17aecff442b87fe171c54e7890b7edb`. Its production health reported the same full commit and build time `2026-09-17T19:03:02Z`. Recovery returned to that release.
+The checked release before the final documentation merge was `33baa2f0c3ea5349f27ea06eaabaf1b65f81189a`, published by [run 35262446382](https://github.com/apink634/is373_ci_cd/actions/runs/35262446382), digest `sha256:158e3748758c165fd75a835b968a9a1fe17aecff442b87fe171c54e7890b7edb`. Its production health reported the same full commit and build time `2026-09-17T19:03:02Z`. Recovery returned to that release.
 
-The final documentation PR must pass the same required CI check. Its subsequent main publication and automatic deployment evidence will be attached to [#22](https://github.com/kaw393939/is373_ci_cd/issues/22) before that issue closes. This avoids embedding a document's own future merge SHA in itself. Use `make status` for the live release.
+The final documentation PR must pass the same required CI check. Its subsequent main publication and automatic deployment evidence will be attached to [#22](https://github.com/apink634/is373_ci_cd/issues/22) before that issue closes. This avoids embedding a document's own future merge SHA in itself. Use `make status` for the live release.
 
 ## Demonstrated failure protection
 

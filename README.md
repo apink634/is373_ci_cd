@@ -19,7 +19,7 @@ This repository owns **application code and delivery**. Its companion, [373_host
 Prerequisites: Docker with Linux containers, Git, `make`, and a bootstrap Python 3 with pip. Python 3.13.15, uv, and test dependencies install inside this repository's ignored tool directories.
 
 ```sh
-git clone https://github.com/kaw393939/is373_ci_cd.git
+git clone https://github.com/apink634/is373_ci_cd.git
 cd is373_ci_cd
 make setup
 make browsers
